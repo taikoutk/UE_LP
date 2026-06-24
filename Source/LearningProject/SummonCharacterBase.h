@@ -52,6 +52,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Summon")
 	void SetSummonMode(ESummonMode NewMode, FVector NewGuardLocation);
 
+	UFUNCTION(BlueprintPure, Category = "Summon")
+	ESummonMode GetSummonMode() const;
+
 	UFUNCTION(BlueprintPure, Category = "Summon|UI")
 	FText GetSummonModeText() const;
 

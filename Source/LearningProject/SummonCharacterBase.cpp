@@ -52,3 +52,8 @@ FText ASummonCharacterBase::GetSummonModeText() const
 		return FText::FromString(TEXT("Unknown"));
 	}
 }
+
+ESummonMode ASummonCharacterBase::GetSummonMode() const
+{
+	return Mode;
+}

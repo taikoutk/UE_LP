@@ -92,6 +92,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Summon")
 	void ToggleSummonModeByIndex(int32 SummonIndex);
 
+	UFUNCTION(BlueprintPure, Category = "Summon")
+	ESummonMode GetGroupSummonMode() const;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -194,6 +197,9 @@ protected:
 	// Summons that are currently spawned and active in the world
 	UPROPERTY(BlueprintReadOnly, Category = "Summon")
 	TArray<ASummonCharacterBase*> ActiveSummons;
+
+	UPROPERTY(BlueprintReadOnly, Category = "Summon")
+	ESummonMode GroupSummonMode = ESummonMode::Follow;
 
 	// Spawns one summon actor from the given class
 	UFUNCTION(BlueprintCallable, Category = "Summon")

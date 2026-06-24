@@ -425,6 +425,8 @@ void AUE_LP_Character::CommandSummon(const FInputActionValue& Value)
 	const ESummonMode NewMode =
 		bHasFollowSummon ? ESummonMode::Guard : ESummonMode::Follow;
 
+	GroupSummonMode = NewMode;
+
 	for (int32 i = 0; i < ActiveSummons.Num(); ++i)
 	{
 		ASummonCharacterBase* Summon = ActiveSummons[i];
@@ -478,6 +480,11 @@ int32 AUE_LP_Character::GetActiveSummonCount() const
 TArray<ASummonCharacterBase*> AUE_LP_Character::GetActiveSummons() const
 {
 	return ActiveSummons;
+}
+
+ESummonMode AUE_LP_Character::GetGroupSummonMode() const
+{
+	return GroupSummonMode;
 }
 
 void AUE_LP_Character::TogglePause(const FInputActionValue& Value)
